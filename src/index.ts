@@ -1,17 +1,9 @@
 import { PrismaClient } from "@prisma/client";
+import {  } from "fs";
 
 const prisma = new PrismaClient();
 
 async function main() {
-  // await prisma.test.create({
-  //   data: {
-  //     title: "some thing 2",
-  //     desc: "some description of some thing"
-  //   }
-  // })
-
-  const allTests = await prisma.test.findMany();
-  console.log(allTests)
 }
 
 main().catch(e => {
