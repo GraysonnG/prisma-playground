@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --no-notify --respawn src/index.ts",
     "postinstall": "npm run prisma:init",
-    "prisma:init": "node scripts/initdatabase.js playground && prisma migrate dev --name init --preview-feature",
+    "prisma:init": "node scripts/create-database.js playground && prisma migrate dev --name init --preview-feature",
     "prisma:update": "prisma db push --preview-feature"
   },
   "author": "",
