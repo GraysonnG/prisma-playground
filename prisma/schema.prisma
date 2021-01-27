@@ -10,9 +10,8 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Test {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  title     String   @unique
-  desc      String?
+model Manga {
+  id          Int      @id @default(autoincrement())
+  mangadexId  Int      @unique
+  createdDate DateTime @default(now())
 }

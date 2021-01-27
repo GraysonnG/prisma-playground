@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node src/index.ts"
+    "dev": "ts-node-dev --no-notify --respawn src/index.ts",
+    "postinstall": "npm run prisma:init",
+    "prisma:init": "node scripts/initdatabase.js playground && prisma migrate dev --name init --preview-feature",
+    "prisma:update": "prisma db push --preview-feature"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +20,7 @@
     "ts-node-dev": "^1.1.1"
   },
   "dependencies": {
-    "@prisma/client": "^2.15.0"
-
+    "@prisma/client": "^2.15.0",
+    "sqlite": "^4.0.19"
   }
 }
